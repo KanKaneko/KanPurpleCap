@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More About Me - Character Stats</title>
+    <style>
+        /* --- CORE THEME (Matches Index) --- */
+        :root {
+            --bg-dark: #0a0414;
+            --primary-purple: #7c3aed;
+            --neon-purple: #a855f7;
+            --text-glow: #e9d5ff;
+            --text-dim: #cbd5e1;
+            --card-bg: rgba(20, 10, 40, 0.7);
+            --border-glow: rgba(139, 92, 246, 0.5);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-dim);
+            font-family: 'Inter', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap');
+
+        /* --- NAVIGATION --- */
+        nav {
+            background: rgba(10, 5, 20, 0.9);
+            border-bottom: 1px solid var(--primary-purple);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--neon-purple);
+            text-shadow: 0 0 8px var(--primary-purple);
+        }
+
+        /* --- HERO HEADER --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .hero h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px var(--primary-purple);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: var(--neon-purple);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        /* --- SKILL GRID --- */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover Effect: Lift up */
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.3);
+            border-color: var(--neon-purple);
+        }
+
+        /* Decorative corner accent */
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, transparent 50%, var(--primary-purple) 50%);
+            opacity: 0.5;
+        }
+
+        .image-frame {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(180deg, var(--neon-purple), transparent);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #000;
+        }
+
+        .skill-card h3 {
+            font-family: "Orbitron", sans-serif;
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-dim);
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="MoreAboutMe.html" class="active">More About Me</a>
+        <a href="Purple CapPage.html">The Purple Cap</a>
+        <a href="ContactsPage.html">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Character Bio</h1>
+        <p>A Jack-of-All-Trades // Continuing to Grow</p>
+    </div>
+
+    <div class="container">
+        <div class="features">
+
+            <div class="skill-card">
+                <div class="image-frame">
+                    <img src="videocreatingimage.jpg" alt="Video Editing">
+                </div>
+                <h3>Video Editor</h3>
+                <p>Equipped with creativity. I produce music and edit video content, collaborating with creators to explore unique visual styles.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="image-frame">
+                    <img src="EyeImage.jpg" alt="Skills">
+                </div>
+                <h3>Versatile Skills</h3>
+                <p>My build is balanced: creative work, coding, and problem-solving. I adapt quickly to new mechanics and get things done.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="image-frame">
+                    <img src="CodingImage.jpg" alt="Code">
+                </div>
+                <h3>Programmer</h3>
+                <p>Proficiency in Java and C++. I build systems and solve technical challenges using logic and structured thinking.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="image-frame">
+                    <img src="SmugImage.png" alt="Collab">
+                </div>
+                <h3>Collaborator</h3>
+                <p>Team player. I enjoy co-op sessions with friends and collaborating on creative projects with other content creators.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="image-frame">
+                    <img src="Roblox PFP.webp" alt="Gamer">
+                </div>
+                <h3>Gamer</h3>
+                <p>Active in the server. I play Roblox, VRChat, L4D2, and more. Always down for a match.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="image-frame">
+                    <img src="PlayButton.png" alt="Future">
+                </div>
+                <h3>Future Plans</h3>
+                <p>Loading next quest... I plan to launch dedicated content creation projects with my squad soon.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

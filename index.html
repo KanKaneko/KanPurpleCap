@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geronimo, Christian Kyle D. - Portfolio</title>
+    <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            --bg-dark: #0a0414;
+            --primary-purple: #7c3aed;
+            --neon-purple: #a855f7;
+            --text-glow: #e9d5ff;
+            --text-dim: #cbd5e1;
+            --card-bg: rgba(20, 10, 40, 0.7);
+            --border-glow: rgba(139, 92, 246, 0.5);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            /* A subtle tech grid background */
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-dim);
+            font-family: 'Inter', sans-serif; /* Clean font for reading */
+            overflow-x: hidden;
+        }
+
+        /* Import Fonts: Orbitron for titles, Inter for body text */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap');
+
+        /* --- HEADER & PROFILE --- */
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            position: relative;
+            background: radial-gradient(circle at top, rgba(88, 28, 135, 0.4), transparent 70%);
+        }
+
+        .logo-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            padding: 5px;
+            border: 2px solid var(--neon-purple);
+            border-radius: 12px;
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px var(--primary-purple);
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        header img.profile {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--neon-purple);
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        header img.profile:hover {
+            transform: scale(1.05);
+        }
+
+        /* Status indicator (Green dot) */
+        .status-indicator {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            background: #22c55e;
+            border: 3px solid var(--bg-dark);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #22c55e;
+        }
+
+        h1 {
+            font-family: "Orbitron", sans-serif;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-size: 2.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px var(--primary-purple);
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--neon-purple);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* --- MAIN CARD --- */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 20px 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative top bar on card */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--neon-purple), transparent);
+        }
+
+        .card h2 {
+            font-family: "Orbitron", sans-serif;
+            color: #fff;
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: var(--text-dim);
+        }
+
+        .highlight {
+            color: var(--neon-purple);
+            font-weight: 600;
+        }
+
+        /* --- XP BAR (Visual Element) --- */
+        .xp-container {
+            margin-top: 30px;
+        }
+        .xp-label {
+            display: flex;
+            justify-content: space-between;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-glow);
+            margin-bottom: 8px;
+        }
+        .xp-bar {
+            height: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .xp-fill {
+            height: 100%;
+            width: 65%; /* Adjust this percentage to simulate progress */
+            background: linear-gradient(90deg, var(--primary-purple), var(--neon-purple));
+            box-shadow: 0 0 15px var(--primary-purple);
+        }
+
+        /* --- NAVIGATION --- */
+        .nav-buttons {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            position: relative;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--primary-purple);
+            color: #fff;
+            padding: 15px 30px;
+            font-family: "Orbitron", sans-serif;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+        }
+
+        .btn:hover {
+            background: var(--primary-purple);
+            box-shadow: 0 0 25px var(--primary-purple);
+            transform: translateY(-2px);
+            text-shadow: 0 0 8px #fff;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .card { padding: 25px; }
+            .nav-buttons { flex-direction: column; width: 100%; }
+            .btn { width: 100%; text-align: center; clip-path: none; border-radius: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html">
+        <img class="logo-badge" src="Purple CAp.png" alt="Logo" />
+    </a>
+
+    <header>
+        <div class="profile-container">
+            <img src="Kyle Pfp.jpg" alt="Christian Kyle" class="profile" />
+            <div class="status-indicator" title="Online / Coding"></div>
+        </div>
+        
+        <h1>Christian Kyle Geronimo</h1>
+        <p class="subtitle">IT Student <span style="color:rgba(255,255,255,0.3)">|</span> Programmer <span style="color:rgba(255,255,255,0.3)">|</span> Editor</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Player Statistics: <span style="color:var(--neon-purple)">Level 2</span></h2>
+            <p>
+                Currently equipped as a <span class="highlight">2nd-year IT student</span>. My playthrough involves tackling new quests every semester—ranging from system analysis to web development. I focus on understanding how technology powers real-world solutions.
+            </p>
+            <p>
+                Like any dedicated player, I grind to upgrade my skill tree: <span class="highlight">Coding, Collaboration, Research, and Systems Design</span>. Every project completed is XP gained toward my ultimate class advancement: <strong>IT Professional</strong>.
+            </p>
+
+            <div class="xp-container">
+                <div class="xp-label">
+                    <span>Current Quest: Degree Completion</span>
+                    <span>65%</span>
+                </div>
+                <div class="xp-bar">
+                    <div class="xp-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="MoreAboutMe.html" class="btn">Character Bio</a>
+            <a href="Purple CapPage.html" class="btn">The Purple Cap</a>
+            <a href="ContactsPage.html" class="btn">Connect</a>
+        </div>
+
+        <footer>
+            <p>© 2025 Christian Kyle D. Geronimo — All Rights Reserved</p>
+            <p style="font-size: 0.8rem; margin-top: 5px;">System Operational</p>
+        </footer>
+    </div>
+
+</body>
+</html>

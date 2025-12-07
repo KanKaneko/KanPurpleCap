@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Comm Link</title>
+    <style>
+        /* --- CORE THEME --- */
+        :root {
+            --bg-dark: #0a0414;
+            --primary-purple: #7c3aed;
+            --neon-purple: #a855f7;
+            --text-glow: #e9d5ff;
+            --text-dim: #cbd5e1;
+            --card-bg: rgba(20, 10, 40, 0.7);
+            --border-glow: rgba(139, 92, 246, 0.5);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--text-dim);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700;900&display=swap');
+
+        /* --- NAV --- */
+        nav {
+            background: rgba(10, 5, 20, 0.9);
+            border-bottom: 1px solid var(--primary-purple);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: "Orbitron", sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--neon-purple);
+            text-shadow: 0 0 8px var(--primary-purple);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+        .hero h1 {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 0 20px var(--primary-purple);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1; /* Pushes footer down */
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            position: relative;
+        }
+
+        /* "Scanning" line effect at top of card */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .card h2 {
+            font-family: "Orbitron", sans-serif;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            display: block;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid var(--primary-purple);
+            color: #fff;
+            padding: 18px;
+            text-decoration: none;
+            font-family: "Orbitron", sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Little glowing bar on the left of buttons */
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--neon-purple);
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-purple);
+            padding-left: 30px; /* Slight movement animation */
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.6);
+        }
+
+        .contact-btn:hover::before {
+            width: 8px;
+            box-shadow: 0 0 10px #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="MoreAboutMe.html">More About Me</a>
+        <a href="Purple CapPage.html">The Purple Cap</a>
+        <a href="ContactsPage.html" class="active">Contacts</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Comm Link</h1>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>Establish Connection</h2>
+            <p style="margin-bottom: 30px; color: var(--text-dim);">Select a frequency to transmit data:</p>
+            
+            <div class="contact-links">
+                <a class="contact-btn" href="https://discordapp.com/users/657528165819744257" target="_blank">Discord Protocol</a>
+                <a class="contact-btn" href="https://x.com/Kan_Chiyako" target="_blank">Twitter Uplink</a>
+                <a class="contact-btn" href="https://www.youtube.com/@Kaneko_Kan" target="_blank">YouTube Channel</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Christian Kyle D. Geronimo — Transmission Ends</p>
+    </footer>
+
+</body>
+</html>
